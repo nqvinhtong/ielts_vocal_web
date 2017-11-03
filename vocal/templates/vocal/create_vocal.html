@@ -1,0 +1,50 @@
+<div class="panel mb25">
+    <div class="panel-heading border">
+        <h3>Add New Vocal</h3>
+    </div>
+    {% if error_msg is not none %}
+        <div class="alert alert-danger" id="msg-update-failed">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            <strong id="alert-msg">{{ error_msg|capfirst }}</strong>
+        </div>
+    {% endif %}
+    <div class="panel-body">
+        <div class="row no-margin">
+            <div class="col-lg-12">
+                <form id="submit-form" class="form-horizontal" role="form" method="post"
+                      action="{% url 'vocal:create_vocal' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Vocal name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-rounded" name="vocal_name_input"
+                                   id="vocal_name_input"
+                                   value="{{ vocal_info.name | default_if_none:'' }}" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Description</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control input-rounded" name="vocal_e_description_input"
+                                   id="vocal_e_description_input"
+                                   value="{{ vocal_info.description | default_if_none:'' }}">
+
+                        </div>
+                    </div>
+
+                    <div class="pull-right">
+                        <a href="{% url 'vocal:vocal_list' %}">
+                            <input id="vocal_btn_cancel" class="btn text-left mb15" type="button"
+                                   value="Cancel"/>
+                        </a>
+
+                        <a href="{% url 'vocal:create_vocal' %}">
+                            <input id="vocal_btn_add" class="btn btn-success text-left mb15" type="submit"
+                                   value="Add"/>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
