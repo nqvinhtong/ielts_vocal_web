@@ -29,6 +29,7 @@ class VocalCreate (TemplateView):
             "vocal_name": request.POST.get('vocal_name_input'),
             "e_description": request.POST.get('vocal_e_description_input'),
         }
+
         headers = {
             'content-type': 'application/json',
         }
