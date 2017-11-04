@@ -1,3 +1,4 @@
+{% block sidebar_panel %}
 <div class="sidebar-panel offscreen-left">
     <div class="brand">
         <a href="javascript:;" class="toggle-sidebar hidden-xs hamburger-icon v3"
@@ -11,7 +12,7 @@
     <nav role="navigation">
         <ul class="nav">
             <li>
-                <a href="#">
+                <a href="{% url 'vocal:vocal_list' %}">
                     <i class="fa fa-home"></i>
                     <span>Home</span>
                 </a>
@@ -25,3 +26,4 @@
         </ul>
     </nav>
 </div>
+{% endblock %}

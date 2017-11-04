@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="panel-heading border">
+    <h3>Vocal Detail</h3>
+</div>
+
+<div class="panel-body">
+    <div class="table-responsive">
+        <div class="detail-vocal">
+            {{ data.vocal_name|default_if_none:'' }}
+        </div>
+    </div>
+</div>
+{% endblock %}
