@@ -42,7 +42,7 @@ class VocalCreate (TemplateView):
         if response.status_code == 200 and json_data.get('status', {}).get('code', '') == "success":
             request.session['vocal_create_msg'] = 'Added data successfully'
             self.logger.info('========== Finished creating vocal ==========')
-            return redirect('vocal:vocal_list')
+            return redirect('vocal:vocal_list_admin')
         else:
             context = {
                 'vocal_info': params,

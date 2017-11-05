@@ -7,12 +7,6 @@
 </div>
 
 <div class="panel-body">
-    <div class="pull-right mb15">
-        <a href="{% url 'vocal:create_vocal' %}">
-            <input id="api-btn-create" class="btn btn-success btn-block" type="button"
-                   value="Add"/>
-        </a>
-    </div>
     <div class="table-responsive">
         {% for vocal in data %}
             <a id="{{ vocal.vocal_id }}" href="{% url 'vocal:vocal_detail' vocal.vocal_id %}">

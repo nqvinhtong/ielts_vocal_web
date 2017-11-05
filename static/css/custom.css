@@ -69,8 +69,9 @@
 }
 
 div .list-vocal {
-    background-color: lightgrey;
-    width: 300px;
-    border: 25px solid green;
-    padding: 25px;
+    width: 500px;
+    height: 100px;
+    padding: 30px;
+    background:#f7f7f7;
+	border:4px solid #f0e9eb;
 }

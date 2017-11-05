@@ -17,6 +17,19 @@
                     <span>Home</span>
                 </a>
             </li>
+            <li class="menu-accordion class={% if is_services_urls %} open{% endif %}">
+                <a href="javascript:;"> <i class="fa fa-trophy"></i> <span>Vocabulary</span> </a>
+                <ul class="sub-menu">
+                    <li class="class={% if is_service_group_url %} active{% endif %}">
+                        <a href="{% url 'vocal:vocal_list_admin' %}"> <span>Vocab management</span> </a>
+                    </li>
+                </ul>
+                <ul class="sub-menu">
+                    <li class="class={% if is_service_group_url %} active{% endif %}">
+                        <a href="{% url 'vocal:vocal_list' %}"> <span>Study Vocab</span> </a>
+                    </li>
+                </ul>
+            </li>
             <li>
                 <a href="#">
                     <i class="fa fa-power-off"></i>

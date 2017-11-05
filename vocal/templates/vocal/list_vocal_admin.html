@@ -19,18 +19,20 @@
             <tr>
                 <th class="col-sm-1" id="vocal id">ID</th>
                 <th class="col-sm-2" id="vocal name">Name</th>
-                <th class="col-sm-1" id="english description">english description</th>
-                <th class="col-sm-2" id="viet description">viet description</th>
-                <th class="col-sm-2" id="image">image</th>
+                <th class="col-sm-1" id="english description">Description</th>
+                <th class="col-sm-2" id="image">Picture</th>
             </tr>
             </thead>
             <tbody>
             {% for vocal in data %}
             <tr>
-                <td class="col-sm-1">{{ vocal.vocal_idd|default_if_none:'' }}</td>
-                <td class="col-sm-2">{{ vocal.vocal_name|default_if_none:'' }}</td>
+                <td class="col-sm-1">{{ vocal.vocal_id|default_if_none:'' }}</td>
+                <td class="col-sm-2">
+                    <a id="{{ vocal.vocal_id }}" href="{% url 'vocal:vocal_detail_admin' vocal.vocal_id %}">
+                        {{ vocal.vocal_name|default_if_none:'' }}
+                    </a>
+                </td>
                 <td class="col-sm-1">{{ vocal.e_description|default_if_none:'' }}</td>
-                <td class="col-sm-2">{{ vocal.v_description|default_if_none:'' }}</td>
                 <td class="col-sm-2">{{ vocal.image_url|default_if_none:'' }}</td>
             </tr>
             {% endfor %}
